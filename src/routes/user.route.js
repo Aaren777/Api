@@ -15,10 +15,10 @@ userRouter.post('/', validator('user-create'), userController.create);
 userRouter.put('/:id/token', userController.updateToken);
 
 // Update user info
-userRouter.put('/', auth, validator('user-update'), userController.update);
+userRouter.put('/', /*auth,*/ validator('user-update'), userController.update);
 
 // Get user info
-userRouter.get('/', auth, userController.getInfo);
+userRouter.get('/', /*auth,*/ userController.getInfo);
 
 // Sign in
 userRouter.post('/sign-in', validator('user-sign-in'), userController.signIn);
@@ -27,6 +27,6 @@ userRouter.post('/sign-in', validator('user-sign-in'), userController.signIn);
 userRouter.post('/sign-out', validator('user-sign-out'), userController.signOut);
 
 //  Change user password
-userRouter.put('/password', auth, validator('user-password-update'), userController.updatePassword);
+userRouter.put('/password', /*auth,*/ validator('user-password-update'), userController.updatePassword);
 
 module.exports = userRouter;
